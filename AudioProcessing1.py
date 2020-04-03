@@ -19,7 +19,7 @@ find(check, 'C:\Python Files\AudioProcessing1\Data\Raw')
 file_dir = os.path.join('C:\Python Files\AudioProcessing1\Data\Raw', check)
 
 #Splitting paragraph into sentences
-text = open(file_dir, "r")
+text = open(file_dir, "r", encoding = "utf-8")
 para = text.readlines()
 extracted_sentence = []
 
@@ -118,7 +118,7 @@ def main():
     input_thread = threading.Thread(target = read_kb_input, args = (input_queue,), daemon = True)
     input_thread.start()
     
-    output_file = open(os.path.join(output_dir, "Output.txt"), "a")
+    output_file = open(os.path.join(output_dir, "Output.txt"), "a", encoding = "utf-8")
 
     i = 1
     for s in extracted_sentence:
